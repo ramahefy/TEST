@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <a href="https://chat.vercel.ai/">
   <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
   <h1 align="center">Chat SDK</h1>
@@ -69,3 +70,7 @@ pnpm dev
 ```
 
 Your app template should now be running on [localhost:3000](http://localhost:3000).
+=======
+# TEST
+TEST
+>>>>>>> 97476531b0ff0091f34bfb02f71b24ef4388f2d7
