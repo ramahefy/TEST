@@ -78,3 +78,16 @@ body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neu
   .name-col { min-width:120px }
   .gantt-cell { min-width:44px }
 }
+
+/* Admin */
+.admin-view { background:white; padding:12px; border-radius:8px; box-shadow:0 6px 18px rgba(18,23,42,0.04) }
+.admin-actions { display:flex; gap:8px; margin-bottom:12px }
+.user-list { width:100%; border-collapse:collapse }
+.user-list th, .user-list td { padding:8px 10px; border:1px solid #eee; text-align:left }
+.user-form { display:flex; flex-direction:column; gap:8px; padding:8px; border:1px solid #f0f0f0; border-radius:6px; background:#fafafa }
+.user-form input, .user-form select { padding:8px; border-radius:6px; border:1px solid #ddd }
+.form-actions { display:flex; gap:8px; margin-top:8px }
+.form-actions button { padding:8px 10px; border-radius:6px }
+.editor { margin-bottom:12px }
+.error { color:#d9534f }
+

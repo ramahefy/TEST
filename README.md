@@ -28,6 +28,38 @@ Petit projet React qui affiche un calendrier mensuel sous forme de diagramme de 
 
 ---
 
+## Administration (nouveau)
+
+Une petite API Express + SQLite a été ajoutée pour gérer les utilisateurs (CRUD).
+
+- Backend: `server/index.js` (Express) + `server/db.js` (SQLite seed)
+- Scripts: pour lancer le serveur: `npm run server` (depuis la racine du projet)
+- Frontend: `src/views/AdminView.jsx`, `src/components/UserList.jsx`, `src/components/UserForm.jsx`, `src/api/users.js`
+
+Instructions rapides:
+
+1. Installer dépendances (racine + serveur):
+
+   npm install
+   cd server && npm install
+
+2. Lancer le serveur (par défaut sur le port 4000):
+
+   npm run server
+> Par défaut un compte admin est seedé: **alice@example.com** / **adminpass** (dev only). Changez le mot de passe en production.
+3. Lancer le client dans un autre terminal:
+
+   npm run dev
+
+4. Optionnel: si votre backend n'est pas sur `http://localhost:4000`, définissez la variable d'environnement Vite `VITE_API_URL`:
+
+   # Windows PowerShell
+   $env:VITE_API_URL = 'http://localhost:4000'
+
+Puis ouvrez l'UI et cliquez sur le bouton **Admin** dans la barre supérieure pour gérer les utilisateurs.
+
+---
+
 Si vous voulez:
 - pagination par mois
 - édition par glisser-déposer
