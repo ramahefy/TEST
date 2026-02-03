@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import GanttGrid from './components/GanttGrid'
 import WeeklyView from './views/WeeklyView'
+import AdminView from './views/AdminView'
 
 export default function App() {
   const people = [
@@ -19,11 +20,18 @@ export default function App() {
         <nav className="top-nav">
           <button onClick={() => setView('gantt')} className={view === 'gantt' ? 'active' : ''}>Vue calendaire</button>
           <button onClick={() => setView('weekly')} className={view === 'weekly' ? 'active' : ''}>Vue hebdo</button>
+          <button onClick={() => setView('admin')} className={view === 'admin' ? 'active' : ''}>Admin</button>
         </nav>
       </header>
 
       <main>
-        {view === 'gantt' ? <GanttGrid people={people} /> : <WeeklyView people={people} />}
+        {view === 'gantt' ? (
+          <GanttGrid people={people} />
+        ) : view === 'weekly' ? (
+          <WeeklyView people={people} />
+        ) : (
+          <AdminView />
+        )}
       </main>
     </div>
   )
