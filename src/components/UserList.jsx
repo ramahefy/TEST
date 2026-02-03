@@ -1,4 +1,5 @@
 import React from 'react'
+import Icon from './Icon'
 
 export default function UserList({ users = [], onEdit, onDelete, onToggleActive, onResetPassword }) {
   return (
@@ -19,14 +20,11 @@ export default function UserList({ users = [], onEdit, onDelete, onToggleActive,
             <td>{u.email}</td>
             <td>{u.role}</td>
             <td>{u.active ? 'Yes' : 'No'}</td>
-            <td>
-              <button onClick={() => onEdit(u)}>Edit</button>
-              <button onClick={() => onToggleActive(u)}>{u.active ? 'Disable' : 'Enable'}</button>
-              <button onClick={() => onDelete(u.id)}>Delete</button>
-              <button onClick={() => {
-                const np = prompt('New password for ' + u.email + ' (leave empty to cancel)')
-                if (np) onResetPassword(u.id, np)
-              }}>Reset password</button>
+            <td className="actions">
+              <button className="icon-btn" title="Edit" data-tooltip="Edit" onClick={() => onEdit(u)}><Icon name="edit" /></button>
+              <button className="icon-btn" title={u.active ? 'Disable' : 'Enable'} data-tooltip={u.active ? 'Disable' : 'Enable'} onClick={() => onToggleActive(u)}><Icon name={u.active ? 'toggle-on' : 'toggle-off'} /></button>
+              <button className="icon-btn delete" title="Delete" data-tooltip="Delete" onClick={() => onDelete(u.id)}><Icon name="trash" /></button>
+              <button className="icon-btn" title="Reset password" data-tooltip="Reset password" onClick={() => onResetPassword(u)}><Icon name="reset" /></button>
             </td>
           </tr>
         ))}

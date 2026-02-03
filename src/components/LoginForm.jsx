@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Icon from './Icon'
 
 export default function LoginForm({ onLogin }) {
   const [email, setEmail] = useState('')
@@ -18,17 +19,22 @@ export default function LoginForm({ onLogin }) {
   }
 
   return (
-    <form className="user-form" onSubmit={submit}>
-      <div>
-        <label>Email</label>
-        <input value={email} onChange={e => setEmail(e.target.value)} />
+    <form className="auth-form user-form" onSubmit={submit}>
+      <div className="input-with-icon">
+        <span className="icon"><Icon name="mail" /></span>
+        <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
       </div>
-      <div>
-        <label>Password</label>
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+
+      <div className="input-with-icon">
+        <span className="icon"><Icon name="lock" /></span>
+        <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
       </div>
+
       <div className="form-actions">
-        <button type="submit" disabled={loading}>{loading ? 'Logging...' : 'Login'}</button>
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          <span className="icon"><Icon name="login" /></span>
+          <span>{loading ? 'Logging...' : 'Login'}</span>
+        </button>
       </div>
     </form>
   )
